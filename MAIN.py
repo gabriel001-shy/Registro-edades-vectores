@@ -11,13 +11,13 @@ edades = [18, 25, 32, 21, 40]
 # Funcion para mostrar todas las edades
 def mostrar_edades():
     if len(edades) == 0:
-        print("\nNo hay edades registradas.")
+        print(f"\nNo hay edades registradas.")
         return
 
     print("\n--- REGISTRO DE EDADES ---")
 
     for indice, edad in enumerate(edades):
-        print("Persona {indice + 1}: {edad} años")
+        print(f"Persona {indice + 1}: {edad} años")
 
     print(f"Total de personas: {len(edades)}")
 
@@ -62,33 +62,33 @@ def consultar_edad():
 # Funcion para modificar una edad
 def modificar_edad():
     if len(edades) == 0:
-        print("\nNo hay edades para modificar.")
+        print(f"\nNo hay edades para modificar.")
         return
 
     try:
-        posicion = int(input("Introduce el numero de la persona: "))
+        posicion = int(input(f"Introduce el numero de la persona: "))
 
         if 1 <= posicion <= len(edades):
-            nueva_edad = int(input("Introduce la nueva edad: "))
+            nueva_edad = int(input(f"Introduce la nueva edad: "))
 
             if nueva_edad > 0:
                 indice = posicion - 1
                 edades[indice] = nueva_edad
 
-                print("La edad se modifico correctamente.")
+                print(f"La edad se modifico correctamente.")
             else:
-                print("Error: la edad debe ser positiva.")
+                print(f"Error: la edad debe ser positiva.")
         else:
-            print("Error: la posicion seleccionada no existe.")
+            print(f"Error: la posicion seleccionada no existe.")
 
     except ValueError:
-        print("Error: debes introducir numeros enteros.")
+        print(f"Error: debes introducir numeros enteros.")
 
 
 # Funcion para calcular el promedio
 def calcular_promedio():
     if len(edades) == 0:
-        print("\nNo hay edades para calcular el promedio.")
+        print(f"\nNo hay edades para calcular el promedio.")
         return
 
     suma = 0
@@ -104,7 +104,7 @@ def calcular_promedio():
 # Funcion para mostrar la edad mayor y la menor
 def mostrar_extremos():
     if len(edades) == 0:
-        print("\nNo hay edades registradas.")
+        print(f"\nNo hay edades registradas.")
         return
 
     edad_mayor = max(edades)
